@@ -64,13 +64,7 @@ VLA-Thinker-7B demonstrates strong performance on LIBERO and RoboTwin 2.0 benchm
 
 ## 📐 Set up
 ```
-cd verltool
-git submodule update --init --recursive
-conda create --name v-retrver python=3.10
-conda activate v-retrver
-pip install -e verl
-pip install -e ".[vllm,acecoder,torl,search_tool]"
-pip install "flash-attn==2.8.3" --no-build-isolation
+
 ```
 
 
@@ -78,58 +72,14 @@ pip install "flash-attn==2.8.3" --no-build-isolation
 ## 🚀 Training
 ### Stage 1: Cold-start Supervised Fine-tuning (SFT)
 
-We recommend to use the popular [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) to perform SFT on our cold-start data.
-1. Install [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory).
-2. Follow the instructions in LLaMA-Factory to configure the cold-start data in `data/dataset_info.json`, as shown below, then copy the config file `sftconfig/qwen2_5vl_retrv_full_sft.yaml` into your LLaMA-Factory codebase.
-```
-"V-Retrver_SFT": {
-  "file_name": "[YOUR_DATASET_FOLDER]/V-Retrver_SFT.json",
-  "formatting": "sharegpt",
-  "columns": {
-    "messages": "conversations",
-    "images": "images"
-  },
-  "tags": {
-    "role_tag": "from",
-    "content_tag": "value",
-    "user_tag": "human",
-    "assistant_tag": "gpt",
-    "system_tag": "system"
-  }
-}
-```
-4. Train Cold-start data with the training configs.
-```
-llamafactory-cli train sft_configs/qwen2_5vl_retrv_full_sft.yaml
-```
-### Stage 2: Rejection Sampling Fine-Tuning (RSFT)
-In this stage, we improve reasoning reliability through Rejection Sampling.The training process and configurations for this stage are identical to Stage 1 (SFT). You simply need to prepare the RSFT dataset and follow the same training steps described in Stage 1.
-### Stage 3: Reinforcement Learning (RL)
-#### Training
-The reinforcement learning is based on the RSFT model. You could either use the model produced in stage 1, or directly download it from [V-Retrver/V-Retrver-RFT-7B](https://huggingface.co/V-Retrver/V-Retrver-RFT-7B). 
-```
-cd verltool
-bash examples/train/v-retrver/train_qwen25vl.sh
-```
-It should be able to run under 8 A800 GPUs with 80GB memory. From more details，please refer to [verl-tool](https://github.com/TIGER-AI-Lab/verl-tool).
 
-Tips:
-- if output shared memory, try lower the `data.dataloader_num_workers`
-- if out of cuda memory during vllm rollout, try set `actor_rollout_ref.rollout.enforce_eager=True`, might be slower.
-- if out of cuda memory during training, try lower the `use_dynamic_bs=False`.
+### Stage 2: Reinforcement Learning (RL)
+
 
 
 
 ## 🔮 Inference & Evaluation
-We recommend using our provided json files and scripts for easier evaluation. 
 
-The json files can be downloaded at: [🤗 [V-Retrver-eval-data](https://huggingface.co/datasets/V-Retrver/V-Retrver-eval-data)].
-
-You can conduct inference on all benchmarks using the following scripts
-```
-cd verltool
-bash examples/train/AdaTooler-V/eval.sh
-```
 
 ## Acknowledgements
 
