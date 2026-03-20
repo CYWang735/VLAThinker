@@ -31,18 +31,25 @@ Experimental results demonstrate that VLA-Thinker achieves  significant  perform
 
 
 
-## 🔥 News
-- [2026/2/06] We release the code, model, data of V-Retrver
+## 📝 TODO
+- [x] LIBERO benchmark
+- [x] LIBERO Plus zero-shot evaluation
+- [ ] RobotWin benchmark
+- [ ] Real-world hardware experiments
 
 
 ## 🏆 Performance
 
-V-Retrver-7B demonstrates strong performance across multiple multimodal retrieval benchmarks.
+VLA-Thinker-7B demonstrates strong performance on LIBERO and RoboTwin 2.0 benchmarks.
 
 
 
 <div align="center">
-  <img src="./assets/tab4.png" alt="Descriptive alt text" width="90%">
+  <img src="./assets/exp1.png" alt="Descriptive alt text" width="90%">
+</div>
+
+<div align="center">
+  <img src="./assets/exp2.png" alt="Descriptive alt text" width="90%">
 </div>
 
 
