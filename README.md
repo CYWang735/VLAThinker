@@ -20,23 +20,19 @@
   <img src="./assets/intro.png" alt="Descriptive alt text" width="95%">
 </div>
 
-We introduce **V-Retrver**, an evidence-driven retrieval framework that reformulates multimodal retrieval as an agentic reasoning process grounded in visual inspection. V-Retrver enables an MLLM to selectively acquire visual evidence during reasoning via external visual tools, performing a **multimodal interleaved reasoning** process that alternates between hypothesis generation and targeted visual verification. 
+we propose **VLA-Thinker**, a **thinking-with-image reasoning** framework for embodied intelligence that aims to break away from text-based chain-of-thought reasoning by treating visual perception as an explicit component of the reasoning process. 
+Unlike traditional VLA approaches that regard visual input as a one-shot observation, VLA-Thinker actively acquires task-relevant visual information through tool invocation during reasoning, thereby enabling an interleaved and cooperative perception–reasoning–action process. 
 
-To train such an evidence-gathering retrieval agent, we adopt a curriculum-based learning strategy combining **supervised reasoning activation, rejection-based refinement, and reinforcement learning** with an evidence-aligned objective. 
+To train such a system, we introduce a two-stage pipeline:
+(1) a **SFT** cold start phase using carefully curated visual CoT data to distill foundational reasoning capabilities and operation formats; and (2) the application of **Group Relative Policy Optimization (GRPO)** to causally align the complete reasoning–action trajectories with desired task outcomes.
 
-Experiments across multiple multimodal retrieval benchmarks demonstrate consistent improvements in retrieval accuracy **(with 23.0\% improvements on average)**, perception-driven reasoning reliability, and generalization.
+Experimental results demonstrate that VLA-Thinker achieves  significant  performance improvements on both the LIBERO benchmark and the RoboTwin 2.0 benchmark. Notably, VLA-Thinker attains a **97.5\%** success rate on the LIBERO benchmark, highlighting the effectiveness of our proposed framework.
 
-All code, models, and data are fully released.
 
 
 
 ## 🔥 News
 - [2026/2/06] We release the code, model, data of V-Retrver
-
-## 📍 Features
-
-+ Support Qwen3-VL/Qwen2.5-VL Training
-+ Provide full pipeline (dataset, SFT training, RFT training, RL training, evaluation, etc) 
 
 
 ## 🏆 Performance
