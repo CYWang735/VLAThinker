@@ -28,6 +28,15 @@ To train such a system, we introduce a two-stage pipeline:
 
 Experimental results demonstrate that VLA-Thinker achieves  significant  performance improvements on both the LIBERO benchmark and the RoboTwin 2.0 benchmark. Notably, VLA-Thinker attains a **97.5\%** success rate on the LIBERO benchmark, highlighting the effectiveness of our proposed framework.
 
+## 🔄 Training Pipeline
+
+<div align="center">
+  <img src="./assets/method.png" alt="Descriptive alt text" width="95%">
+</div>
+
+Training proceeds in two stages:
+- **SFT cold start:** an SFT cold-start phase with curated visual Chain-of-Thought data to activate structured reasoning and tool-use behaviors.
+- **GRPO-Based RL:** GRPO-based reinforcement learning to align complete reasoning-action trajectories with task-level success.
 
 
 
@@ -43,7 +52,6 @@ Experimental results demonstrate that VLA-Thinker achieves  significant  perform
 VLA-Thinker-7B demonstrates strong performance on LIBERO and RoboTwin 2.0 benchmarks.
 
 
-
 <div align="center">
   <img src="./assets/exp1.png" alt="Descriptive alt text" width="90%">
 </div>
@@ -52,21 +60,6 @@ VLA-Thinker-7B demonstrates strong performance on LIBERO and RoboTwin 2.0 benchm
   <img src="./assets/exp2.png" alt="Descriptive alt text" width="90%">
 </div>
 
-
-
-## 🎥 Reasoning Examples
-
- Some reasoning examples are as follows.
-
-<div align="center">
-  <img src="assets/exp1.png" width="80%">
-</div>
-<div align="center">
-  <img src="assets/exp2.png" width="80%">
-</div>
-<div align="center">
-  <img src="assets/exp3.png" width="80%">
-</div>
 
 
 ## 📐 Set up
