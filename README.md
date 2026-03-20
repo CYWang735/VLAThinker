@@ -1,6 +1,16 @@
 # VLA-Thinker: Boosting Vision-Language-Action Models through Thinking-with-Image Reasoning
 
-[[📖 Paper](https://arxiv.org/abs/2603.14523)] [[🤗 Data](https://huggingface.co/VLA-Thinker)] [[🤗 Model](https://huggingface.co/VLA-Thinker)]
+<p align="center">
+  <a href="https://arxiv.org/abs/2603.14523">
+    <img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv Paper">
+  </a>
+  <a href="https://huggingface.co/VLA-Thinker">
+    <img src="https://img.shields.io/badge/Weights-HuggingFace-ffcd00?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face Weights">
+  </a>
+  <a href="https://huggingface.co/VLA-Thinker">
+    <img src="https://img.shields.io/badge/Datasets-HuggingFace-ffcd00?style=for-the-badge&logo=huggingface&logoColor=black" alt="Dataset">
+  </a>
+</p>
 
 
 
