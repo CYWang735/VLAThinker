@@ -28,6 +28,7 @@ To train such a system, we introduce a two-stage pipeline:
 
 Experimental results demonstrate that VLA-Thinker achieves  significant  performance improvements on both the LIBERO benchmark and the RoboTwin 2.0 benchmark. Notably, VLA-Thinker attains a **97.5\%** success rate on the LIBERO benchmark, highlighting the effectiveness of our proposed framework.
 
+
 ## 🔄 Training Pipeline
 
 <div align="center">
@@ -39,12 +40,6 @@ Training proceeds in two stages:
 - **GRPO-Based RL:** GRPO-based reinforcement learning to align complete reasoning-action trajectories with task-level success.
 
 
-
-## 📝 TODO
-- [x] LIBERO benchmark
-- [x] LIBERO Plus zero-shot evaluation
-- [ ] RobotWin benchmark
-- [ ] Real-world hardware experiments
 
 
 ## 🏆 Performance
@@ -64,7 +59,9 @@ VLA-Thinker-7B demonstrates strong performance on LIBERO and RoboTwin 2.0 benchm
 
 ## 📐 Set up
 ```
-
+conda create -n vlathinker python=3.10 -y
+conda activate vlathinker
+pip install -r requirements.txt
 ```
 
 
