@@ -108,10 +108,6 @@ bash examples/run_openvla_oft_rl_twin2.sh
 ```
 
 
-## Acknowledgements
-
-We sincerely appreciate the contributions of the open-source community. The related projects are as follows: [DeepThinkVLA](https://github.com/OpenBMB/DeepThinkVLA), [SimpleVLA-RL](https://github.com/PRIME-RL/SimpleVLA-RL).
-
 
 ## Citations
 
