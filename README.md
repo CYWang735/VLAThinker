@@ -69,13 +69,43 @@ pip install -r requirements.txt
 ## 🚀 Training
 ### Stage 1: Cold-start Supervised Fine-tuning (SFT)
 
+```bash
+bash scripts/finetune.sh
+```
+This expands to:
+```bash
+deepspeed src/train.py \
+  --deepspeed ./src/configs/zero2.json \
+  --base_model_path <hf_base_model_id_or_local_path> \
+  --repo_id <hf_dataset_repo>/libero_cot \
+  --output_dir ./checkpoints/sft/deepthinkvla/libero_cot \
+  --per_device_train_batch_size 8 \
+  --gradient_accumulation_steps 2 \
+  --num_images_in_input 2 \
+  --report_to none
+```
+Key flags: toggle `--num_images_in_input` for the single-camera variant, adjust `--bits`, `--lora_enable`, `--vision_lora`, and match schedules with `--max_steps`, `--save_steps`, and `--save_total_limit`.
+
+
 
 ### Stage 2: Reinforcement Learning (RL)
+ Use the following command to start RL training for OpenVLA-OFT on the LIBERO or RoboTwin2.0 benchmark:
 
-
+```bash
+bash examples/run_openvla_oft_rl_libero.sh
+or
+bash examples/run_openvla_oft_rl_twin2.sh
+```
 
 
 ## 🔮 Inference & Evaluation
+To evaluate the performance of your model, enable evaluation mode by setting `trainer.val_only=True` in `examples/run_openvla_oft_rl_libero/twin2.sh`. Then, execute the same script:
+
+```bash
+bash examples/run_openvla_oft_rl_libero.sh
+or
+bash examples/run_openvla_oft_rl_twin2.sh
+```
 
 
 ## Acknowledgements
