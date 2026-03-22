@@ -70,7 +70,7 @@ pip install -r requirements.txt
 ### Stage 1: Cold-start Supervised Fine-tuning (SFT)
 
 ```bash
-bash scripts/finetune.sh
+bash examples/sft.sh
 ```
 This expands to:
 ```bash
