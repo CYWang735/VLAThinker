@@ -40,6 +40,8 @@ Training proceeds in two stages:
 - **GRPO-Based RL:** GRPO-based reinforcement learning to align complete reasoning-action trajectories with task-level success.
 
 
+## 📰 News
+- [2026/03/28] We plan to release dataset following the publication of this work.
 
 
 ## 🏆 Performance
